@@ -1,0 +1,2 @@
+*/ this file contain the web page wich will display the graphic chart of the value raspberry pi received from the publisher
+*/ it also contain the methode i uses to connect it with MySQL to store data received

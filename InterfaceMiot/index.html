@@ -1,0 +1,66 @@
+<!-- index.html -->
+<html>
+
+<head>
+    <!--  <meta http-equiv="refresh" content="5"> --> <!-- Refresh every 5 seconds -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/scripts/chartScript.js" defer></script>
+
+    <style>
+        /* Add custom styles here */
+        canvas#myChart {
+            width: 50%;
+            /* Adjust the width as needed */
+            height: 20px;
+            /* Adjust the height as needed */
+            margin: 0 auto;
+            /* Center the chart horizontally */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="value">Loading...</div>
+
+    Seuil T:
+    <!-- <input type="text" id="seuilT">
+    <button onclick="sendSeuilT()"> Valider</button> -->
+    <br>
+    <!-- <form action="http://localhost:8091/setSeuilTemp">
+        <input name="Seuil" type="text" id="seuil"/>
+        <button type="submit">Send This Bad Boy To The Server</button>
+       </form> -->
+    <!-- <form action="/aaa" method="post">
+        <label for="seuil">Seuil</label>
+        <input id="seuil" name="seuill" type="text" value="" placeholder="enter seuil" required />
+        <input type="submit" value="submit" />
+    </form> -->
+
+    <form action="/valSeuilTemp" method="post">
+        <label for="seuil">Seuil</label>
+        <input id="seuil" name="seuil" type="text" value="" placeholder="enter seuil" required />
+        <input type="submit" value="Temperature under seuil" />
+    </form>
+    <form id="receiveAllForm" action="/" method="GET">
+        <input type="submit" value="Receive All" />
+    </form>
+
+    
+    <!-- Display the chart -->
+    <canvas id="myChart" width="400" height="400"></canvas>
+</body>
+
+
+</html>
+
+
+
+<script>
+    document.getElementById('receiveAllForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Manually navigate to the root route
+        window.location.href = '/';
+    });
+</script>
